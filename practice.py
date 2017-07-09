@@ -85,39 +85,55 @@ def print_sign(int):
         print "Zero"
 
 def is_divisible_by_three(int):
-    num = int % 3
+    #use modulo to get the remainder of int divide by 3
+    remainder = int % 3
 
-    if num == 0:
+    #if remainder is 0 then it's divisible by 3 and returns True
+    #otherwise it's not divisible and returns False
+    if remainder == 0:
         return True
     else:
         return False
 
 def num_spaces(sentence):
-    sentence = sentence.rstrip()
-    words = sentence.split(" ")
+    #split sentence up (using a space " " as a delimiter)
+    #and store each word in a list
+    words_in_sentence = sentence.split(" ")
 
-    return len(words) - 1
+    #since it's split by " ", the amount of space in the sentence
+    #should be the length of the list - 1
+    return len(words_in_sentence) - 1
 
 
+#set tip to a default value, to make it optional to add it
 def total_meal_price(price, tip = .15):
     return price + (price * tip)
 
 def sign_and_parity(int):
+
+    #create empty list to store information about the integer
     int_info = []
+
+    #if int is less than 0, then it's negative, otherwise it's positive
     if int < 0:
         int_info.append("Negative")
     else:
         int_info.append("Positive")
 
+
+    #use modulo to check if there's a remainder when int is divided by 2
     remainder = int % 2
 
+    #if there is a remainder, then it's odd, otherwise it's even
     if remainder != 0:
         int_info.append("Odd")
     else:
         int_info.append("Even")
 
+    #return the integer information list
     return int_info
 
+#set title to a default value to make it optional to add
 def full_title(name, title = "Engineer"):
     return title + " " + name
 
